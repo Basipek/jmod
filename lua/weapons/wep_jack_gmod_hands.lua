@@ -457,7 +457,7 @@ function SWEP:Reload()
 			local Tar=self:GetCarrying()
 			local ply=self.Owner
 			
-			if Tar and IsValid(Tar) and (Tar:EntIndex()~=-1) and !Tar:IsConstrained() then
+			if Tar and IsValid(Tar) and (Tar:EntIndex()~=-1) and !constraint.HasConstraints(ent) and Phys:IsMotionEnabled() then
 				if (true) then --CHECK FOR INV LIMIT HERE
 					Tar:SetNoDraw(true)
 					Tar:SetNotSolid(true)
